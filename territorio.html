@@ -69,7 +69,10 @@
 
         <!-- Sezione Mappa in formato immagine -->
         <div class="content-block mappa animation fadeIn">            
-            <div class="content-image mappa" style="background-image: url(images/mappa.png);"></div>
+            <!-- <div class="content-image mappa" style="background-image: url(images/mappa.png);"></div> -->
+
+            <img class="content-image mappa" src="images/mappa.png" alt="Mappa">
+
         </div>
 
         <div class="content-block reverse animation fadein_right">
@@ -119,11 +122,11 @@
             dots: true,
             autoplay: true,
             autoplaySpeed: 3000,
-            arrows: true,
+            arrows: false,
             infinite: true,
             speed: 500,
             cssEase: 'linear',            
-            centerMode:true,
+            // centerMode:true,
 
         });
     });
