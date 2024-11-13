@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Costamadi</title>
     
-    <link rel="stylesheet" href="css_sito.css">
-    <link rel="stylesheet" href="libs/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="libs/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css_sito.css"> 
     <script src="libs/jquery.js"></script>
-    <script src="libs/slick-1.8.1/slick/slick.min.js"></script>
-</head>
+    
+  <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+ <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css"> 
+  <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+ </head>
 
 <body class="bg-white">
 
@@ -33,19 +35,15 @@
 	</ul>
 </nav>
  
-    	<!-- Carousel -->
-	 <div class="relative">
-
-        <h1 class="carousel-title">VINI CHE RISVEGLIANO I SENSI</h1>
-   <div class="carousel" id="slick-carousel">
-   
-
-       <div><img src="images/vini/vini.1.jpg" alt="First slide"></div>
-       <div><img src="images/vini/vini.2.JPG" alt="Second slide"></div>
-       <div><img src="images/vini/vini.3.JPG" alt="Third slide"></div>
-   </div>
-</div>
-
+	 <!-- Carousel -->
+     <div class="relative">
+        <h1 class="carousel-title">VIGNE CHE DANNO VITA</h1>
+        <div class="owl-carousel" id="owl-carousel">
+            <div><img src="images/vini/vini.1.jpg" alt="First slide"></div>
+            <div><img src="images/vini/vini.2.jpg" alt="Second slide"></div>
+            <div><img src="images/vini/vini.3.jpg" alt="Third slide"></div>
+        </div>
+    </div>
 
 
 <!-- Products Section -->
@@ -139,20 +137,23 @@
 </div>
 </footer>
 <script src="script_animation.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#slick-carousel').slick({
-                dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            cssEase: 'linear',            
-            centerMode:true,
-            adaptiveHeight: true
-            });
-        });
-    </script>
+<script>
+$(document).ready(function () {
+    $('#owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: true,
+        autoplay: true,
+        nav:true,
+        dotsEach: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        items: 1,  // Per mostrare una sola immagine alla volta
+        center: true,
+        navText: "ciao",
+        smartSpeed: 500,  // Velocità della transizione
+    });
+});
+</script>
 </body>
 </html>

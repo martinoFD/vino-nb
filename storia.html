@@ -20,10 +20,15 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="css_sito.css">
-	<link rel="stylesheet" href="libs/slick-1.8.1/slick/slick.css">
-	<link rel="stylesheet" href="libs/slick-1.8.1/slick/slick-theme.css">
+	
 	<script src="libs/jquery.js"></script>
-	<script src="libs/slick-1.8.1/slick/slick.min.js"></script>
+
+    
+	<link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css"> 
+	 <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+	
 </head>
 
 <body class="bg-grey">
@@ -45,18 +50,17 @@
 		</ul>
 	</nav>
 
-	<!-- Carousel -->
-	 <div class="relative">
-
-	 	<h1 class="carousel-title">UNA STORIA DI FAMIGLIA E PASSIONE</h1>
-	<div class="carousel" id="slick-carousel">
-	
-
-		<div><img src="images/storia/storia.1.jpg" alt="First slide"></div>
-		<div><img src="images/storia/storia.2.JPG" alt="Second slide"></div>
-		<div><img src="images/storia/storia.3.JPG" alt="Third slide"></div>
-	</div>
+	 <!-- Carousel -->
+<div class="relative">
+    <h1 class="carousel-title">VIGNE CHE DANNO VITA</h1>
+    <div class="owl-carousel" id="owl-carousel">
+        <div><img src="images/storia/storia.1.jpg" alt="First slide"></div>
+        <div><img src="images/storia/storia.2.jpg" alt="Second slide"></div>
+        <div><img src="images/storia/storia.3.jpg" alt="Third slide"></div>
+    </div>
 </div>
+
+
 	<div class="content-section text-center">
 		<div class="section-header">
 			<h2 class="section-title">LA NOSTRA STORIA</h2>
@@ -162,17 +166,21 @@
 	<script src="script_animation.js"></script>
 	<script>
 		$(document).ready(function () {
-			$('#slick-carousel').slick({
-				dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            cssEase: 'linear',            
-            // centerMode:true,
-			});
-		});
+    $('#owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: true,
+        autoplay: true,
+        nav:true,
+        dotsEach: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        items: 1,  // Per mostrare una sola immagine alla volta
+        center: true,
+        navText: "ciao",
+        smartSpeed: 500,  // Velocità della transizione
+    });
+});
 	</script>
 </body>
 

@@ -3,14 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
     <title>Costamadi - Colline del Prosecco</title>
 
-    <link rel="stylesheet" href="css_sito.css">
-    <link rel="stylesheet" href="libs/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="libs/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css_sito.css"> 
     <script src="libs/jquery.js"></script>
-    <script src="libs/slick-1.8.1/slick/slick.min.js"></script>
+  
+    
+    <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css"> 
+     <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 </head>
 
 <body>
@@ -34,17 +38,20 @@
 
 
 <!-- Carousel -->
+<!-- <div class="relative"> -->
+
+    
+<!-- Carousel -->
 <div class="relative">
-
     <h1 class="carousel-title">VIGNE CHE DANNO VITA</h1>
-        <div class="carousel" id="slick-carousel">
-
-
-   <div><img src="images/territorio/territorio.1.jpg" alt="First slide"></div>
-   <div><img src="images/territorio/territorio.2.jpg" alt="Second slide"></div>
-   <div><img src="images/territorio/territorio.3.jpg" alt="Third slide"></div>
+    <div class="owl-carousel" id="owl-carousel">
+        <div><img src="images/territorio/territorio.1.jpg" alt="First slide"></div>
+        <div><img src="images/territorio/territorio.2.jpg" alt="Second slide"></div>
+        <div><img src="images/territorio/territorio.3.jpg" alt="Third slide"></div>
+    </div>
 </div>
-</div>
+
+<!-- </div> -->
  
 <!-- Content Section -->
 <section class="content-section m-0 p-0">
@@ -57,7 +64,7 @@
         <div class="content-block animation fadein_left">
             <div class="content-image" style="background-image: url(images/territorio/territorio.paragrafo.jpg);"></div>
             <div class="content-text">
-                <h2>I VIGNETI COSTAAMADI</h2>
+                <h2 class="titolo">I VIGNETI COSTAAMADI</h2>
                 <p>Situata sulla suggestiva collina di Collalbrigo, a Conegliano, la società agricola si estende su 20 ettari di vigne che incarnano l'essenza del nostro territorio. Dei 20 ettari, ben 16 si trovano nel prestigioso territorio UNESCO, un'area rinomata per la sua bellezza naturale e per la qualità eccezionale delle sue uve.</p>
 				<p>Ogni grappolo qui coltivato è il frutto di un'attenta cura e di una tradizione vinicola che si tramanda da generazioni, riflettendo la passione e la dedizione che mettiamo in ogni fase della produzione.
 				</p>
@@ -76,7 +83,7 @@
         <div class="content-block reverse animation fadein_right">
 			<div class="content-image" style="background-image: url(images/territorio/territorio.vite.jpg);"></div>
 			<div class="content-text">
-                <h2>UN BRINDISI DI RAFFINATEZZA, IL NOSTRO PROSECCO DOCG</h2>
+                <h2 class="titolo">UN BRINDISI DI RAFFINATEZZA, IL NOSTRO PROSECCO DOCG</h2>
                 <p>Il Prosecco Conegliano Valdobbiadene DOCG è il gioiello della nostra produzione, un vino che incarna la perfezione e l'eleganza delle colline del Prosecco UNESCO. Nato da uve selezionate e coltivate con amore e dedizione, il nostro Prosecco si distingue per la sua freschezza, le bollicine delicate e i sentori fruttati e floreali che evocano la bellezza del nostro territorio.
 
 				</p>
@@ -115,19 +122,22 @@
 <!-- Animation and Carousel Script -->
 <script src="script_animation.js"></script>
 <script>
-    $(document).ready(function () {
-        $('#slick-carousel').slick({
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            cssEase: 'linear',            
-            // centerMode:true,
-
-        });
+$(document).ready(function () {
+    $('#owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: true,
+        autoplay: true,
+        nav:true,
+        dotsEach: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        items: 1,  // Per mostrare una sola immagine alla volta
+        center: true, 
+        smartSpeed: 500,  // Velocità della transizione
     });
+});
+
 </script>
 </body>
 
